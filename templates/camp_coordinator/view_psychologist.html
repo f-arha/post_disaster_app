@@ -1,0 +1,33 @@
+{% extends 'tables/index.html' %}
+
+{% block title %}View Psychologist Status{% endblock %}
+
+{% block heading %}View Psychologist Status{% endblock %}
+
+{% block content %}
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Sl. No</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Status</th>
+
+      </tr>
+    </thead>
+    <tbody>
+     {% for i in val %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.description }}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.status }}</td>
+
+
+      </tr>
+   {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}

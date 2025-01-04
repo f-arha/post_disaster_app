@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<form>
+<body>
+<table width="200" border="1">
+  <tr>
+  	<th>Sno</th>
+    <th>name</th>
+    <th>place</th>
+    <th>pin</th>
+    <th>post</th>
+    <th>district</th>
+    <th>contact</th>
+    <th>status</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ forloop.counter }}</td>
+    <td>&nbsp;{{ i.name }}</td>
+    <td>&nbsp;{{ i.place }}</td>
+    <td>&nbsp;{{ i.pin }}</td>
+    <td>&nbsp;{{ i.post }}</td>
+    <td>&nbsp;{{ i.district }}</td>
+    <td>&nbsp;{{ i.contactno }}</td>
+
+    <td><p><a href="/editcamp/{{ i.id }}">edit</a></p>
+
+    <p><a href="/deletecamp/{{ i.id }}">delete</a></p></td>
+  </tr>
+    {% endfor %}
+  <tr>
+    <td colspan="8"><a href="/add_camp">add new</a></td>
+  </tr>
+</table>
+
+<div align="left"></div>
+</body>
+</form>
+</html>

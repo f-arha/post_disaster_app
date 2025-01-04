@@ -6,48 +6,48 @@
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="/add_camp_post">
+<form id="form1" name="form1" method="post" action="/editcamp_post">
 <table width="200" border="1">
   <tr>
     <td>name</td>
     <td><label>
-      <input type="text" name="textfield" />
+      <input type="text" name="textfield" value="{{ data.name }}"/>
     </label></td>
   </tr>
   <tr>
     <td>place</td>
     <td><label>
-      <input type="text" name="textfield2" />
+      <input type="text" value="{{ data.place }}" name="textfield2" />
     </label></td>
   </tr>
   <tr>
     <td>pin</td>
     <td><label>
-      <input type="text" name="textfield3" />
+      <input type="text" value="{{ data.pin }}" name="textfield3" />
     </label></td>
   </tr>
   <tr>
     <td>post</td>
     <td><label>
-      <input type="text" name="textfield4" />
+      <input type="text" value="{{ data.post }}" name="textfield4" />
     </label></td>
   </tr>
   <tr>
     <td>district</td>
     <td><label>
-      <input type="text" name="textfield5" />
+      <input type="text" value="{{ data.district}}" name="textfield5" />
     </label></td>
   </tr>
   <tr>
     <td>contact</td>
     <td><label>
-      <input type="text" name="textfield6" />
+      <input type="text" value="{{ data.contactno}} "name="textfield6" />
     </label></td>
   </tr>
   <tr>
     <td colspan="2"><label>
       <div align="center">
-        <input type="submit" name="Submit" value="Add" />
+        <input type="submit" name="Submit" value="update" />
         </div>
     </label></td>
     </tr>

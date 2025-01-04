@@ -5,6 +5,7 @@
   <title>Data Table</title>
 </head>
 <body>
+<form id="form1" name="form1" method="post" action="">
   <table width="100%" border="1" cellspacing="0" cellpadding="5">
     <tr>
       <th>Sno</th>
@@ -18,26 +19,24 @@
       <th>Aadhar</th>
       <th>Verify</th>
     </tr>
+        {% for i in data %}
     <tr>
-      <td><!-- Auto-generated --></td>
-      <td><!-- Name here --></td>
-      <td><!-- Email here --></td>
-      <td><!-- Phone here --></td>
-      <td><!-- Image here --></td>
-      <td><!-- Place here --></td>
-      <td><!-- Pin here --></td>
-      <td><!-- Post here --></td>
-      <td><!-- Aadhar here --></td>
+    <td>&nbsp;{{ forloop.counter }}</td>
+    <td>&nbsp;{{ i.name }}</td>
+    <td>&nbsp;{{ i.email }}</td>
+    <td>{{ i.phone }}</td>
+    <td>{{ i.image }}</td>
+    <td>{{ i.place }}</td>
+    <td>&nbsp;{{ i.pin }}</td>
+    <td>&nbsp;{{ i.post }}</td>
+    <td>&nbsp;{{ i.aadhar }}</td>
       <td>
-        <input name="Accept" type="button" value="Accept" />
-        <input name="Reject" type="button" value="Reject" />
+        <a href="/accept/{{ i.LOGIN.id }}">Accept</a> / <a href="/reject/{{ i.LOGIN.id }}">Reject</a>
       </td>
     </tr>
-    <!-- Additional rows can be dynamically added here -->
+          {% endfor %}
   </table>
 
-  <div style="margin-top: 10px;">
-    <input type="button" value="Add" />
-  </div>
+</form>
 </body>
 </html>
