@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Form Submission</title>
+</head>
+<body>
+  <form action="" method="get" enctype="multipart/form-data">
+    <table width="200" border="1">
+      <tr>
+        <td><label for="name">Name</label></td>
+        <td>
+          <input type="text" id="name" name="name" />
+        </td>
+      </tr>
+      <tr>
+        <td><label for="image">Image</label></td>
+        <td>
+          <input type="file" id="image" name="file" />
+        </td>
+      </tr>
+      <tr>
+        <td><label for="place">Place</label></td>
+        <td>
+          <input type="text" id="place" name="place" />
+        </td>
+      </tr>
+      <tr>
+        <td><label for="pin">Pin</label></td>
+        <td>
+          <input type="text" id="pin" name="pin" />
+        </td>
+      </tr>
+      <tr>
+        <td><label for="post">Post</label></td>
+        <td>
+          <input type="text" id="post" name="post" />
+        </td>
+      </tr>
+      <tr>
+        <td><label for="phone">Phone</label></td>
+        <td>
+          <input type="text" id="phone" name="phone" />
+        </td>
+      </tr>
+      <tr>
+        <td><label for="age">Age</label></td>
+        <td>
+          <input type="text" id="age" name="age" />
+        </td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td>
+          <input type="radio" id="male" name="gender" value="Male" />
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="Female" />
+          <label for="female">Female</label>
+          <input type="radio" id="other" name="gender" value="Other" />
+          <label for="other">Other</label>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div align="center">
+            <input type="submit" name="submit" value="Add" />
+          </div>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

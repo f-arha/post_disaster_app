@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View or Update Needs</title>
+</head>
+<body>
+  <h1>View or Update Needs</h1>
+  <table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Sl. No</th>
+        <th>Type</th>
+        <th>Quantity</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Empty rows with default Received/Not Received statuses -->
+      <tr>
+        <td>1</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <select name="status" required>
+            <option value="Received">Received</option>
+            <option value="Not Received" selected>Not Received</option>
+          </select>
+        </td>
+        <td>
+          <form method="post" action="">
+            <input type="submit" value="Update" />
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <select name="status" required>
+            <option value="Received" selected>Received</option>
+            <option value="Not Received">Not Received</option>
+          </select>
+        </td>
+        <td>
+          <form method="post" action="">
+            <input type="submit" value="Update" />
+          </form>
+        </td>
+      </tr>
+      <!-- Add more rows as needed -->
+    </tbody>
+  </table>
+</body>
+</html>
