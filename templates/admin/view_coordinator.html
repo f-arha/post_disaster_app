@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+
+<body>
+<table class="table">
+  <tr>
+  	<th>Sno</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Image</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ forloop.counter }}</td>
+    <td>&nbsp;{{ i.name }}</td>
+    <td>&nbsp;{{ i.email }}</td>
+    <td>&nbsp;{{ i.phone }}</td>
+    <td>&nbsp;{{ i.image }}</td>
+
+{#    <td><p><a href="/editcamp/{{ i.id }}">Edit</a></p>#}
+{##}
+{#    <p><a href="/deletecamp/{{ i.id }}">Delete</a></p></td>#}
+{#  </tr>#}
+    {% endfor %}
+  <tr>
+    <td colspan="8"><a href="/add_coordinator">Add New</a></td>
+  </tr>
+</table>
+
+<div align="left"></div>
+</body>
+
+</html>

@@ -5,49 +5,45 @@
   <title>View Members</title>
 </head>
 <body>
-<form>
-  <table>
+<table class="table">
     <thead>
-      <tr>
-        <th>Sl. No</th>
-        <th>Name</th>
-        <th>Image</th>
-        <th>Place</th>
-        <th>Pin</th>
-        <th>Post</th>
-        <th>Phone</th>
-        <th>Gender</th>
-        <th>Age</th>
-        <th>Action</th>
-      </tr>
+        <tr>
+            <th>Sno</th>
+            <th >Name</th>
+            <th>Image</th>
+            <th >Place</th>
+            <th >Pin</th>
+            <th>Post</th>
+            <th >Phone</th>
+            <th >Gender</th>
+            <th>Age</th>
+            <th >Action</th>
+        </tr>
     </thead>
     <tbody>
-      <!-- Empty rows (no values populated) -->
-      <tr>
-        <td></td>
-        <td><input type="text" name="name" /></td>
-        <td><input type="file" name="image" accept="image/*" /></td>
-        <td><input type="text" name="place" /></td>
-        <td><input type="text" name="pin" /></td>
-        <td><input type="text" name="post" /></td>
-        <td><input type="text" name="phone" /></td>
-        <td>
-          <input type="radio" name="gender1" value="Male" /> Male
-          <input type="radio" name="gender1" value="Female" /> Female
-          <input type="radio" name="gender1" value="Other" /> Other        </td>
-        <td><input type="text" name="age" /></td>
-        <td><button>Update</button></td>
-      </tr>
-
-      <!-- Add more rows dynamically as needed -->
+        {% for i in data %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.image }}</td>
+            <td>{{ i.place }}</td>
+            <td>{{ i.pin }}</td>
+            <td>{{ i.post }}</td>
+            <td>{{ i.phone }}</td>
+            <td>{{ i.gender }}</td>
+            <td>{{ i.age }}</td>
+            <td>
+                <p><a href="/editmembers/{{ i.id }}">Edit</a></p>
+                <p><a href="/deletemembers/{{ i.id }}">Delete</a></p>
+            </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="10" style="text-align: center;">
+                <a href="/add_members">Add New</a>
+            </td>
+        </tr>
     </tbody>
-  </table>
-
-  <br />
-
-  <div>
-    <button onclick="window.location.href='add_member.html'">Add Member</button>
-  </div>
-</form>>
+</table>
 </body>
 </html>

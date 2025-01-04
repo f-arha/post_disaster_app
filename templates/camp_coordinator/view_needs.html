@@ -6,54 +6,35 @@
 </head>
 <body>
   <h1>View or Update Needs</h1>
-  <table border="1" cellpadding="5" cellspacing="0">
+ <table class="table">
     <thead>
       <tr>
         <th>Sl. No</th>
+        <th>needs</th>
         <th>Type</th>
         <th>Quantity</th>
         <th>Date</th>
         <th>Status</th>
-        <th>Action</th>
+
       </tr>
     </thead>
     <tbody>
-      <!-- Empty rows with default Received/Not Received statuses -->
+     {% for i in val %}
       <tr>
-        <td>1</td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.NEEDID.needs }}</td>
+        <td>{{ i.type }}</td>
+        <td>{{ i.quantity }}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.status }}</td>
         <td>
-          <select name="status" required>
-            <option value="Received">Received</option>
-            <option value="Not Received" selected>Not Received</option>
-          </select>
+            {% if i.status == 'verified' %}
+            <a href="/need_accept/{{ i.id }}">accept</a>|<a href="/need_reject/{{ i.id }}">reject</a>
+            {% endif %}
         </td>
-        <td>
-          <form method="post" action="">
-            <input type="submit" value="Update" />
-          </form>
-        </td>
+
       </tr>
-      <tr>
-        <td>2</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>
-          <select name="status" required>
-            <option value="Received" selected>Received</option>
-            <option value="Not Received">Not Received</option>
-          </select>
-        </td>
-        <td>
-          <form method="post" action="">
-            <input type="submit" value="Update" />
-          </form>
-        </td>
-      </tr>
-      <!-- Add more rows as needed -->
+   {% endfor %}
     </tbody>
   </table>
 </body>

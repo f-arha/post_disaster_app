@@ -5,18 +5,19 @@
   <title>Request Psychologist</title>
 </head>
 <body>
-  <form method="post" action="">
-    <table border="1">
-      <tr>
-        <td><label for="description">Description</label></td>
-        <td><input type="number" id="description" name="description" required /></td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <input type="submit" name="submit" value="Request" />
-        </td>
-      </tr>
-    </table>
-  </form>
+  <form method="post" action="/request_psychologist_post">
+  {% csrf_token %}
+  <div class="row row-space">
+    <div class="col-2">
+      <div class="input-group">
+        <label class="label">Description</label>
+        <input class="input--style-4" type="text" id="description" name="description" required />
+      </div>
+    </div>
+  </div>
+  <div class="p-t-15">
+    <button class="btn btn--radius-2 btn--blue" type="submit">Request</button>
+  </div>
+</form>
 </body>
 </html>

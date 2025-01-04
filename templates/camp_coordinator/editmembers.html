@@ -1,9 +1,10 @@
-{% extends "forms/index.html" %}
-
-{% block title %}Edit Member{% endblock %}
-{% block heading %}Edit Member Details{% endblock %}
-
-{% block form_content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Request Need</title>
+</head>
+<body>
 <form id="form1" name="form1" method="post" action="/editmembers_post">
     {% csrf_token %}
     <div class="row row-space">
@@ -66,4 +67,5 @@
         <button class="btn btn--radius-2 btn--blue" type="submit">Update</button>
     </div>
 </form>
-{% endblock %}
+</body>
+</html>

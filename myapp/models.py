@@ -38,7 +38,7 @@ class camp_co_table(models.Model):
 class volunteer(models.Model):
     LOGIN = models.ForeignKey(login_table, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
-    age = models.BigIntegerField()
+    age = models.CharField(max_length=100)
     gender = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
     phone = models.BigIntegerField()

@@ -2,42 +2,50 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <title>Form Submission</title>
+  <title>Add Coordinator</title>
 </head>
 <body>
-  <form action="" method="get" enctype="multipart/form-data">
-    <table width="200" border="1">
-      <tr>
-        <td><label for="id">ID No</label></td>
-        <td>
-          <input type="text" id="id" name="id" />        </td>
-      </tr>
-      <tr>
-        <td><label for="name">Name</label></td>
-        <td>
-          <input type="text" id="name" name="name" />        </td>
-      </tr>
-      <tr>
-        <td><label for="email">Email</label></td>
-        <td>
-          <input type="email" id="email" name="email" />        </td>
-      </tr>
-      <tr>
-        <td><label for="phone">Phone</label></td>
-        <td>
-          <input type="text" id="phone" name="phone" />        </td>
-      </tr>
-      <tr>
-        <td><label for="image">Image</label></td>
-        <td><input type="file" id="image" name="image" /></td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <div align="center">
-            <input type="submit" name="submit" value="Add" />
-          </div>        </td>
-      </tr>
-    </table>
-  </form>
+ <form id="form1" name="form1" method="post" action="/add_coordinator_post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="row row-space">
+    <div class="col-2">
+      <div class="input-group">
+        <label class="label">ID No</label>
+        <input class="input--style-4" type="text" name="id" required>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="input-group">
+        <label class="label">Name</label>
+        <input class="input--style-4" type="text" name="name" required>
+      </div>
+    </div>
+  </div>
+  <div class="row row-space">
+    <div class="col-2">
+      <div class="input-group">
+        <label class="label">Email</label>
+        <input class="input--style-4" type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}">
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="input-group">
+        <label class="label">Phone</label>
+        <input class="input--style-4" type="text" name="phone" required pattern="[6789][0-9]{9}">
+      </div>
+    </div>
+  </div>
+  <div class="row row-space">
+    <div class="col-2">
+      <div class="input-group">
+        <label class="label">Image</label>
+        <input class="input--style-4" type="textfield" name="image" required>
+      </div>
+    </div>
+  </div>
+  <div class="p-t-15">
+    <button class="btn btn--radius-2 btn--blue" type="submit">Add</button>
+  </div>
+</form>
 </body>
 </html>

@@ -7,51 +7,52 @@
 
 <body>
 <form id="form1" name="form1" method="post" action="/editcamp_post">
-<table width="200" border="1">
-  <tr>
-    <td>name</td>
-    <td><label>
-      <input type="text" name="textfield" value="{{ data.name }}"/>
-    </label></td>
-  </tr>
-  <tr>
-    <td>place</td>
-    <td><label>
-      <input type="text" value="{{ data.place }}" name="textfield2" />
-    </label></td>
-  </tr>
-  <tr>
-    <td>pin</td>
-    <td><label>
-      <input type="text" value="{{ data.pin }}" name="textfield3" />
-    </label></td>
-  </tr>
-  <tr>
-    <td>post</td>
-    <td><label>
-      <input type="text" value="{{ data.post }}" name="textfield4" />
-    </label></td>
-  </tr>
-  <tr>
-    <td>district</td>
-    <td><label>
-      <input type="text" value="{{ data.district}}" name="textfield5" />
-    </label></td>
-  </tr>
-  <tr>
-    <td>contact</td>
-    <td><label>
-      <input type="text" value="{{ data.contactno}} "name="textfield6" />
-    </label></td>
-  </tr>
-  <tr>
-    <td colspan="2"><label>
-      <div align="center">
-        <input type="submit" name="Submit" value="update" />
+    {% csrf_token %}
+    <div class="row row-space">
+        <div class="col-2">
+            <div class="input-group">
+                <label class="label">Camp Name</label>
+                <input class="input--style-4" type="text" name="textfield" value="{{ data.name }}" required>
+            </div>
         </div>
-    </label></td>
-    </tr>
-</table>
+        <div class="col-2">
+            <div class="input-group">
+                <label class="label">Place</label>
+                <input class="input--style-4" type="text" name="textfield2" value="{{ data.place }}" required>
+            </div>
+        </div>
+    </div>
+    <div class="row row-space">
+        <div class="col-2">
+            <div class="input-group">
+                <label class="label">Pin</label>
+                <input class="input--style-4" type="text" name="textfield3" value="{{ data.pin }}"required pattern="[0-9]{6}">
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="input-group">
+                <label class="label">Post</label>
+                <input class="input--style-4" type="text" name="textfield4" value="{{ data.post }}" required>
+            </div>
+        </div>
+    </div>
+    <div class="row row-space">
+        <div class="col-2">
+            <div class="input-group">
+                <label class="label">District</label>
+                <input class="input--style-4" type="text" name="textfield5" value="{{ data.district }}" required>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="input-group">
+                <label class="label">Contact No</label>
+                <input class="input--style-4" type="text" name="textfield6" value="{{ data.contactno }}" required pattern="[6789][0-9]{9}">
+            </div>
+        </div>
+    </div>
+    <div class="p-t-15">
+        <button class="btn btn--radius-2 btn--blue" type="submit">Update</button>
+    </div>
 </form>
 
 </body>
